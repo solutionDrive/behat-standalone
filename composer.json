@@ -2,7 +2,7 @@
   "name": "solutiondrive/behat-standalone",
   "description": "Standalone installation of behat and some useful additions.",
   "type": "project",
-  "license": "proprietary",
+  "license": "MIT",
   "authors": [
     {
       "name": "solutionDrive",
