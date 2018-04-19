@@ -26,6 +26,8 @@
     "coduo/php-matcher": "^3.0",
     "lakion/mink-debug-extension": "^1.2"
   },
+  "autoload": {
+  },
   "extra": {
     "phar-builder": {
       "compression": "GZip",
