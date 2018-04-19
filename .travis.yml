@@ -35,4 +35,4 @@ deploy:
   upload-dir: "phar"
   acl: "public-read"
   on:
-    branch: create-phar
+    branch: master
