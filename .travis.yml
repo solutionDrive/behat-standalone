@@ -15,14 +15,11 @@ env:
 
 before_install:
   - phpenv config-add .php.travis.ini
+  - export PATH=$PATH:$HOME/.composer/vendor/bin
 
 install:
   - composer global require macfja/phar-builder
   - composer install --optimize-autoloader -n
-#  - export PHARBUILDER_RELEASE=$(curl --connect-timeout 30 --max-time 60 -s https://api.github.com/repos/MacFJA/PharBuilder/releases/latest)
-#  - echo $PHARBUILDER_RELEASE
-#  - curl --connect-timeout 30 --max-time 180  -o "phar-builder.phar" -L `echo $PHARBUILDER_RELEASE | grep browser_download_url | head -n 1 | cut -d '"' -f 4`
-#  - chmod +x phar-builder.phar
 
 script:
   - "phar-builder package --name=${TARGET_BASENAME}.php${TRAVIS_PHP_VERSION}.phar"
