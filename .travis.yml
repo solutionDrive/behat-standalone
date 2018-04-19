@@ -18,7 +18,9 @@ before_install:
 
 install:
   - composer install --optimize-autoloader -n
-  - curl --connect-timeout 30 --max-time 180  -o "phar-builder.phar" -L `curl --connect-timeout 30 --max-time 60 -s https://api.github.com/repos/MacFJA/PharBuilder/releases/latest | grep browser_download_url | head -n 1 | cut -d '"' -f 4`
+  - export PHARBUILDER_RELEASE=$(curl --connect-timeout 30 --max-time 60 -s https://api.github.com/repos/MacFJA/PharBuilder/releases/latest)
+  - echo $PHARBUILDER_RELEASE
+  - curl --connect-timeout 30 --max-time 180  -o "phar-builder.phar" -L `echo $PHARBUILDER_RELEASE | grep browser_download_url | head -n 1 | cut -d '"' -f 4`
   - chmod +x phar-builder.phar
 
 script:
