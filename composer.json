@@ -33,7 +33,7 @@
       "compression": "GZip",
       "name": "behat-standalone.phar",
       "output-dir": "./build",
-      "entry-point": "./vendor/bin/behat",
+      "entry-point": "./vendor/behat/behat/bin/behat",
       "include-dev": false,
       "include" : [],
       "skip-shebang" : false
