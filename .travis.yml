@@ -32,7 +32,7 @@ deploy:
   skip_cleanup: true
   region: "eu-central-1"
   local_dir: "build"
-  upload-dir: "phar/test"
+  upload-dir: "phar"
   acl: "public-read"
   on:
-    branch: fix-build
+    branch: master
