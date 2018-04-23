@@ -11,18 +11,17 @@ env:
     - S3_BUCKET="build-tools.cloud.solutiondrive.de"
     - secure: uArA9/jHId6NcEU/hxsbqW7na97j+QbX/2eRwAghdBR+ob4zuGx3UHwPs+vibXUR6RvAGBbI5PgZgkpCCyi49JaEU4gwRelGduQdYwAJRCras75rhRxJmIDRojPqbXmnpyZlohHCUIc0MU6Sp7geL6p3J3H4Jf5B8sEhFULbN82ENs0AyYtxV+ZslMW3rIFxy7pj0KV476+5V3xoAuSn3aNUjaWUwn3TyhP3dEGJww4e0tmdWgmDcuvMA4bv6WoW+bH+HwVNUH+0O84Jyc7daSKWOsnB6MT2eQ7ESvJiwB+uI1FUPWXCKoWK28PhN22YJ+Cq/e4SdTew3eIuNhQCC3KBDQAfds7TZH9RIADx9ylw2jMmXQuHlO7aRFXFS7psmlMCTAxQTW6e3xsfZ0PCAL+LFg2AvwPH74QwkCMHGvtdVL7w7JAjKzV69NRGEqm86mSkpoUkif/iC//4l1QCj7eTJHF0FmBYr0VopnOEYui2FmSxLhAz7QtWHMPi3X+Nz11g78toB1R2yQjvuuV78X+BvTl6ImCFc+V7k23UCQS8bMPq/SI+sidN4/7XXqjC6DsKEQYp2BQiY5ELG323c1fcWxWVgQl/r/xxJjyn1IduERTKyBQ2KRmN9krjHv8yYcb/WJ1B740JQwKYNMoyArccGhQgLchAczWBrBZZ4is=
     - secure: Lv7uy7fSepSc1RqW1ldTNIcWL3WJza6WELh3RcLtSMO6bjW9fbw9nHY6QeulnvCwykYjXKAp4wadI797/YCpd6SRmTlp7cbgTdXTcE/VQItsbsLXbXyaF39sTql5vpan+70bM+CNJY0Buee+h/9ZP6cK8lUsnZmUYwnOl0gnioat4W7B/p7fYcMSpMadBEGh4BeFPcCSHfvUSVe1C0ENEK+a4NHM+Ity8iCSCp5VcE/CHoracSiipO/mNVZZOLADs9Zq8RBOYngGtvDNFq9fdXFAmQqK+b8XQa99LqJ/SjvRJYDVRR1ynBU3+qWJsflYHW5eGiliSFqjEzzoOXABXYEmLpNHxK1Du5KxWX015/Qld14uHtaYZpWHDCgCUm/f7Un2ijuN6emfb/VOg35bAxv27mBWry/TeeLe/MnrV/dC7oHQyeioaO01Px1+AxlBREwwiLFa1QDQx1rGXk269rIkUvXeaT4Oi0b3dSFBqWEqEDpmgwumNfu4nfn6L8mHTy3VmorxKIYHfSYImDpSBYhLMbbhnhEeTxNwsZzXmyKNwgitM2ol4EWCfN+URrPx5ta7XpYX9gnATm25BXrncHfcdseqjqAfDx2RwKMI1hBW62pstVhdZvKP8frCbawmr3Zb7rUhgGDWWB1iyDoKtI29NyyY714sXMPIpv7ZqDw=
-    - TARGET_BASENAME="behat-standalone"
 
 before_install:
   - phpenv config-add .php.travis.ini
   - export PATH=$PATH:$HOME/.composer/vendor/bin
 
 install:
-  - composer global require macfja/phar-builder
+  - composer global require kherge/box
   - composer install --optimize-autoloader -n
 
 script:
-  - "phar-builder package --name=${TARGET_BASENAME}.php${TRAVIS_PHP_VERSION}.phar"
+  - "box build"
 
 deploy:
   provider: s3

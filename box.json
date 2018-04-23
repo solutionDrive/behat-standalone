@@ -1,0 +1,18 @@
+{
+  "chmod": "0755",
+  "directories": [],
+  "files": [
+    "LICENSE"
+  ],
+  "finder": [
+    {
+      "name": ["*.php", "*.xsd", "LICENSE"],
+      "exclude": ["Tests", "tests", "sebastian", "phpunit", "phpspec", "process", "filesystem"],
+      "in": "vendor"
+    }
+  ],
+  "compactors": "Herrera\\Box\\Compactor\\Php",
+  "main": "vendor/behat/behat/bin/behat",
+  "output": "build/behat-standalone.phar",
+  "stub": true
+}

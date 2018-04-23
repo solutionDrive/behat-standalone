@@ -25,18 +25,5 @@
     "friends-of-behat/variadic-extension": "^1.1",
     "coduo/php-matcher": "^3.0",
     "lakion/mink-debug-extension": "^1.2"
-  },
-  "autoload": {
-  },
-  "extra": {
-    "phar-builder": {
-      "compression": "GZip",
-      "name": "behat-standalone.phar",
-      "output-dir": "./build",
-      "entry-point": "./vendor/bin/behat",
-      "include-dev": false,
-      "include" : [],
-      "skip-shebang" : false
-    }
   }
 }
