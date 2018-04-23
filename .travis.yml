@@ -21,7 +21,10 @@ install:
   - composer install --optimize-autoloader -n
 
 script:
-  - "box build"
+  - box build
+  
+before_deploy:
+  - mv ./build/behat-standalone.phar ./build/${TARGET_BASENAME}.php${TRAVIS_PHP_VERSION}.phar
 
 deploy:
   provider: s3
