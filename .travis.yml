@@ -22,9 +22,9 @@ install:
 
 script:
   - box build
-  
+
 before_deploy:
-  - mv ./build/behat-standalone.phar ./build/${TARGET_BASENAME}.php${TRAVIS_PHP_VERSION}.phar
+  - mv ./build/behat-standalone.phar ./build/behat-standalone.php${TRAVIS_PHP_VERSION}.phar
 
 deploy:
   provider: s3
