@@ -7,16 +7,22 @@ Builds a phar containing a full behat installation that contains some other usef
 Usage
 -----
 
-To create the phar, you need to install ```macfja/phar-builder``` globally,
-for example by downloading the last release as a phar itself:
+To create the phar, you need to install ```kherge/box``` globally:
+(The global composer bin path needs to be available in $PATH)
 
-    curl -o createPhar -L `curl -s https://api.github.com/repos/MacFJA/PharBuilder/releases \
-        | grep browser_download_url | head -n 1 | cut -d '"' -f 4`
+    composer global require kherge/box
 
-Then you can just run the following command inside the repository:
+Install the dependencies
 
-    phar-builder.phar package
+    composer install --optimize-autoloader -n
 
+Create the phar file
+
+    box build -c box.json
+    
+Perhaps it is necessary to allow php to create a phar
+
+    php -d phar.readonly=0 ~/.composer/vendor/bin/box build -c box.json
 
 The newly created phar file can be used just like the ```behat``` binary is used:
 
