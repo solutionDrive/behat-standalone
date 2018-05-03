@@ -25,6 +25,7 @@
     "friends-of-behat/variadic-extension": "^1.1",
     "coduo/php-matcher": "^3.0",
     "lakion/mink-debug-extension": "^1.2",
-    "sensiolabs/behat-page-object-extension": "^2.0"
+    "sensiolabs/behat-page-object-extension": "^2.0",
+    "symfony/filesystem": "^4.0"
   }
 }
