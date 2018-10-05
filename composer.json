@@ -27,7 +27,7 @@
     "friends-of-behat/variadic-extension": "^1.1",
     "lakion/mink-debug-extension": "^1.2",
     "sensiolabs/behat-page-object-extension": "^2.0",
-    "solutiondrive/behat-symfony-dependency-injection-container-extension": "^0.1.0"
+    "solutiondrive/behat-symfony-dependency-injection-container-extension": "~0.1"
   },
   "config": {
     "sort-packages": true
